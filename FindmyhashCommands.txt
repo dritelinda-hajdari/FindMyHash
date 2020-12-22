@@ -1,0 +1,92 @@
+1. Crack one MD5 hash using findmyhash
+
+// Generate hash command
+echo -n Pluto | md5sum
+
+//Generated hash 
+ea8dbc7900082678e2e4f7275c945902
+
+//Use HashIdentifier to identify hash algorithm
+HASH: ea8dbc7900082678e2e4f7275c945902
+
+Possible Hashs:
+[+] MD5
+[+] Domain Cached Credentials - MD4(MD4(($pass))).(strtolower($username))
+
+//Use findmyhash to crack the hash
+findmyhash MD5 -h ea8dbc7900082678e2e4f7275c945902
+
+Cracking hash: ea8dbc7900082678e2e4f7275c945902
+
+Analyzing with my-addr (http://md5.my-addr.com)...
+	
+***** HASH CRACKED!! *****
+The original string is: Pluto
+
+
+The following hashes were cracked:
+----------------------------------
+
+ea8dbc7900082678e2e4f7275c945902 -> Pluto
+
+2. Crack multiple JUNIPER hash using findmyhash
+
+//Create text file and add one hash in one line.
+$9$fT3/CA01Eytu
+$9$NG-sgq.5n9pTzIc
+
+//Use findmyhash to crack the hashes on the file
+findmyhash juniper -f test.txt
+
+Cracking hash: $9$fT3/CA01Eytu
+
+Analyzing with password-decrypt (http://password-decrypt.com)...
+
+***** HASH CRACKED!! *****
+The original string is: Mars
+
+Cracking hash: $9$NG-sgq.5n9pTzIc
+
+Analyzing with password-decrypt (http://password-decrypt.com)...
+
+***** HASH CRACKED!! *****
+The original string is: Pluto
+
+
+The following hashes were cracked:
+----------------------------------
+
+$9$fT3/CA01Eytu -> Mars
+$9$NG-sgq.5n9pTzIc -> Pluto
+
+
+3. Crack hash using google
+
+// Generate hash command
+echo -n Pluto | sha1
+
+//Generated hash
+bce8c9aca4120776fad6b517874aa09c46405454
+
+//Use findmyhash to crack the hash
+findmyhash sha1 -h bce8c9aca4120776fad6b517874aa09c46405454 -g
+
+Cracking hash: bce8c9aca4120776fad6b517874aa09c46405454
+
+Analyzing with hashcrack (http://hashcrack.com)...
+... hash not found in hashcrack
+
+
+.
+.
+.
+
+The following hashes were cracked:
+----------------------------------
+
+NO HASH WAS CRACKED.
+
+The hash wasn't found in any database. Maybe Google has any idea...
+Looking for results...
+
+Google doesn't have any result. Sorry!
